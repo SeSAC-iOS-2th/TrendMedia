@@ -16,6 +16,9 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //셀의 높이 설정
+        tableView.rowHeight = 80  //default = 44
+        
         
         
     }
@@ -68,35 +71,76 @@ class SettingTableViewController: UITableViewController {
     //2. 셀의 디자인과 데이터(필수): cellForRowAt
     //ex. 카톡 이중원, 프로필 사진, 상태 메시지 등
     //IndexPath: 섹션(IndexPath.section)과 셀(IndexPath.row)의 index 정보
+    //재사용 메커니즘
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        print("cellforrowat", indexPath)
         
-        //withIdentifier에 대한 오류: 잘못 입력했을 때
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
-        
-        
-        //모든 경우의 수가 대응이 될 필요가 없는 이유: cell을 return하는 코드가 if문 밖에 있기 때문
-        if indexPath.section == 0 {
+        //identifier가 필요한 이유
+        if indexPath.section == 2 {
             
-            //셀의 index에 따라 textLabel 이름 짓기
-            cell.textLabel?.text = birthdayFriends[indexPath.row]
-            cell.textLabel?.textColor = .systemMint
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
-
-        } else if indexPath.section == 1 {
-            cell.textLabel?.text = "1번 인덱스 텍스트"
-            cell.textLabel?.textColor = .systemPink
-            cell.textLabel?.font = .italicSystemFont(ofSize: 25)
-
-        } else if indexPath.section == 2 {
+            //dequeueReusableCell -> 재사용 메커니즘!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "rightDetailCell")!
             cell.textLabel?.text = "2번 인덱스 텍스트"
             cell.textLabel?.textColor = .systemPurple
             cell.textLabel?.font = .boldSystemFont(ofSize: 15)
+            cell.detailTextLabel?.text = "디테일 레이블"
+            
+            
+            //indexPath.row % 2 == 0, 1
+            if indexPath.row % 2 == 0 {
+                cell.imageView?.image = UIImage(systemName: "star")
+                cell.backgroundColor = .lightGray
+            } else {
+                cell.imageView?.image = UIImage(systemName: "star.fill")
+                cell.backgroundColor = .white
+            }
+            
+            //삼항 연산자
+            cell.imageView?.image = indexPath.row % 2 == 0 ? UIImage(systemName: "star") : UIImage(systemName: "star.fill")
+            cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .white
 
+            
+            return cell
+
+        } else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
+            
+            
+            //모든 경우의 수가 대응이 될 필요가 없는 이유: cell을 return하는 코드가 if문 밖에 있기 때문
+            if indexPath.section == 0 {
+                
+                //셀의 index에 따라 textLabel 이름 짓기
+                cell.textLabel?.text = birthdayFriends[indexPath.row]
+                cell.textLabel?.textColor = .systemMint
+                cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+
+            } else if indexPath.section == 1 {
+                cell.textLabel?.text = "1번 인덱스 텍스트"
+                cell.textLabel?.textColor = .systemPink
+                cell.textLabel?.font = .italicSystemFont(ofSize: 25)
+
+            }
+            
+            return cell
         }
         
         
-        return cell
+    }
+    
+    
+    //셀의 높이(옵션, 빈도 높은) -> 특정 섹션, 특정 셀 지정 가능
+    // rowHeight vs heightForRowAt
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 && indexPath.row == 0 {
+            return 100
+        } else if indexPath == [0,1] {
+            return 44
+        } else {
+            return 70
+        }
     }
     
     
