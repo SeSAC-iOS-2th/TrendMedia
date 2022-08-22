@@ -20,6 +20,27 @@ class ShoppingTableViewController: UITableViewController {
         userTextField.placeholder = "무엇을 구매하실 건가요?"
         
         designButton(button: addButton, text: "추가")
+        addButton.addTarget(self, action: #selector(addButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func addButtonClicked() {
+
+        if userTextField.text == "" {
+            let alert = UIAlertController(title: "주의", message: "살 것을 입력하세요.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "예", style: .default)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+            
+            return
+        }
+        list.append(userTextField.text!)
+        tableView.reloadData()
+        
+        userTextField.text = nil
+    }
+    
+    @objc func bookmarkButtonClicked() {
+        
     }
     
     func designButton(button: UIButton, text: String) {
@@ -45,6 +66,7 @@ class ShoppingTableViewController: UITableViewController {
         cell.checkboxImageView.image = UIImage(systemName: "checkmark.square.fill")
         cell.contentsLabel.text = list[indexPath.row]
         cell.bookmarkButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        cell.bookmarkButton.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
         
         return cell
     }

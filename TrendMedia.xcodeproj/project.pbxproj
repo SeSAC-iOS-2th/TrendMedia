@@ -33,6 +33,10 @@
 		127B4A502884FE3A0087CCA4 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B4A4F2884FE3A0087CCA4 /* SettingTableViewController.swift */; };
 		127B4A5228850FD50087CCA4 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127B4A5128850FD50087CCA4 /* Setting.storyboard */; };
 		128F54CC2886F381003A0BAD /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F54CB2886F381003A0BAD /* MovieTableViewCell.swift */; };
+		12908DA928B3FA2C00C28381 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12908DA828B3FA2C00C28381 /* RealmModel.swift */; };
+		12908DAC28B3FAFF00C28381 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 12908DAB28B3FAFF00C28381 /* Realm */; };
+		12908DAE28B3FAFF00C28381 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12908DAD28B3FAFF00C28381 /* RealmSwift */; };
+		12E3381E288A3F9F002ED1ED /* AnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3381D288A3F9F002ED1ED /* AnyViewController.swift */; };
 		12EA3A5F288598130089E8E7 /* SettingCaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EA3A5E288598130089E8E7 /* SettingCaseTableViewController.swift */; };
 		12ED6FA8288717ED00DD20B4 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ED6FA7288717ED00DD20B4 /* ShoppingTableViewCell.swift */; };
 		12F19D042886D89E001A19C0 /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12F19D032886D89E001A19C0 /* Shopping.storyboard */; };
@@ -67,6 +71,8 @@
 		127B4A4F2884FE3A0087CCA4 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		127B4A5128850FD50087CCA4 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		128F54CB2886F381003A0BAD /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		12908DA828B3FA2C00C28381 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		12E3381D288A3F9F002ED1ED /* AnyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewController.swift; sourceTree = "<group>"; };
 		12EA3A5E288598130089E8E7 /* SettingCaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCaseTableViewController.swift; sourceTree = "<group>"; };
 		12ED6FA7288717ED00DD20B4 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		12F19D032886D89E001A19C0 /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12908DAE28B3FAFF00C28381 /* RealmSwift in Frameworks */,
+				12908DAC28B3FAFF00C28381 /* Realm in Frameworks */,
 				1266F1DB2887AEA00033C799 /* Toast in Frameworks */,
 				1266F1D82887AE930033C799 /* Kingfisher in Frameworks */,
 			);
@@ -91,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				1232FB4B2886403D0002D6FB /* Trend.storyboard */,
+				12E3381D288A3F9F002ED1ED /* AnyViewController.swift */,
 				123750542888E74700EE5208 /* TrendTableViewController.swift */,
 				1232FB4F288643F90002D6FB /* TrendViewController.swift */,
 				1232FB5728864B990002D6FB /* BucketlistTableViewController.swift */,
@@ -104,6 +113,7 @@
 		127B4A2D2884DDE70087CCA4 = {
 			isa = PBXGroup;
 			children = (
+				12908DA728B3FA2700C28381 /* Realm */,
 				12F4D5E92888F27C00C722B2 /* Search */,
 				123750532888E58800EE5208 /* Trend */,
 				127B4A382884DDE70087CCA4 /* TrendMedia */,
@@ -144,6 +154,14 @@
 			path = TrendMedia;
 			sourceTree = "<group>";
 		};
+		12908DA728B3FA2700C28381 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				12908DA828B3FA2C00C28381 /* RealmModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		12F4D5E92888F27C00C722B2 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +193,8 @@
 			packageProductDependencies = (
 				1266F1D72887AE930033C799 /* Kingfisher */,
 				1266F1DA2887AEA00033C799 /* Toast */,
+				12908DAB28B3FAFF00C28381 /* Realm */,
+				12908DAD28B3FAFF00C28381 /* RealmSwift */,
 			);
 			productName = TrendMedia;
 			productReference = 127B4A362884DDE70087CCA4 /* TrendMedia.app */;
@@ -207,6 +227,7 @@
 			packageReferences = (
 				1266F1D62887AE930033C799 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				1266F1D92887AEA00033C799 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				12908DAA28B3FAFF00C28381 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 127B4A372884DDE70087CCA4 /* Products */;
 			projectDirPath = "";
@@ -244,12 +265,14 @@
 				12320E4E2887956A00442D23 /* MovieInfo.swift in Sources */,
 				1232FB562886478B0002D6FB /* UITextField+Extension.swift in Sources */,
 				12F19D062886D8BD001A19C0 /* ShoppingTableViewController.swift in Sources */,
+				12908DA928B3FA2C00C28381 /* RealmModel.swift in Sources */,
 				128F54CC2886F381003A0BAD /* MovieTableViewCell.swift in Sources */,
 				1232FB54288645350002D6FB /* UIViewController+Extension.swift in Sources */,
 				12320E5028879AA300442D23 /* RecommandCollectionViewController.swift in Sources */,
 				127B4A502884FE3A0087CCA4 /* SettingTableViewController.swift in Sources */,
 				1232FB52288644100002D6FB /* SearchViewController.swift in Sources */,
 				12320E4C28878C9E00442D23 /* Movie.swift in Sources */,
+				12E3381E288A3F9F002ED1ED /* AnyViewController.swift in Sources */,
 				123750552888E74700EE5208 /* TrendTableViewController.swift in Sources */,
 				127B4A3E2884DDE70087CCA4 /* ViewController.swift in Sources */,
 				12320E5228879DFB00442D23 /* RecommandCollectionViewCell.swift in Sources */,
@@ -412,7 +435,7 @@
 				INFOPLIST_FILE = TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Intro;
+				INFOPLIST_KEY_UIMainStoryboardFile = Shopping;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -440,7 +463,7 @@
 				INFOPLIST_FILE = TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Intro;
+				INFOPLIST_KEY_UIMainStoryboardFile = Shopping;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,6 +519,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		12908DAA28B3FAFF00C28381 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -508,6 +539,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1266F1D92887AEA00033C799 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		12908DAB28B3FAFF00C28381 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12908DAA28B3FAFF00C28381 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		12908DAD28B3FAFF00C28381 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12908DAA28B3FAFF00C28381 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
