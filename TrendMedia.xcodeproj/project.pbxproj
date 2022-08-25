@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121548B628B7C5BB00B1ABC4 /* ShoppingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121548B528B7C5BB00B1ABC4 /* ShoppingTableView.swift */; };
+		122B0EA728B50A7500569AE2 /* ShoppingRealmDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B0EA628B50A7500569AE2 /* ShoppingRealmDataViewController.swift */; };
+		122B0EAA28B50B7900569AE2 /* ShoppingRealmDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B0EA828B50B7900569AE2 /* ShoppingRealmDataTableViewCell.swift */; };
+		122B0EAB28B50B7900569AE2 /* ShoppingRealmDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 122B0EA928B50B7900569AE2 /* ShoppingRealmDataTableViewCell.xib */; };
 		12320E4C28878C9E00442D23 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12320E4B28878C9E00442D23 /* Movie.swift */; };
 		12320E4E2887956A00442D23 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12320E4D2887956A00442D23 /* MovieInfo.swift */; };
 		12320E5028879AA300442D23 /* RecommandCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12320E4F28879AA300442D23 /* RecommandCollectionViewController.swift */; };
@@ -45,6 +49,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		121548B528B7C5BB00B1ABC4 /* ShoppingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableView.swift; sourceTree = "<group>"; };
+		122B0EA628B50A7500569AE2 /* ShoppingRealmDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingRealmDataViewController.swift; sourceTree = "<group>"; };
+		122B0EA828B50B7900569AE2 /* ShoppingRealmDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingRealmDataTableViewCell.swift; sourceTree = "<group>"; };
+		122B0EA928B50B7900569AE2 /* ShoppingRealmDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingRealmDataTableViewCell.xib; sourceTree = "<group>"; };
 		12320E4B28878C9E00442D23 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		12320E4D2887956A00442D23 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		12320E4F28879AA300442D23 /* RecommandCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCollectionViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +103,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		122B0EA528B505D900569AE2 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				12F19D032886D89E001A19C0 /* Shopping.storyboard */,
+				12F19D052886D8BD001A19C0 /* ShoppingTableViewController.swift */,
+				121548B528B7C5BB00B1ABC4 /* ShoppingTableView.swift */,
+				12ED6FA7288717ED00DD20B4 /* ShoppingTableViewCell.swift */,
+				122B0EA628B50A7500569AE2 /* ShoppingRealmDataViewController.swift */,
+				122B0EA828B50B7900569AE2 /* ShoppingRealmDataTableViewCell.swift */,
+				122B0EA928B50B7900569AE2 /* ShoppingRealmDataTableViewCell.xib */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
 		123750532888E58800EE5208 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +135,7 @@
 		127B4A2D2884DDE70087CCA4 = {
 			isa = PBXGroup;
 			children = (
+				122B0EA528B505D900569AE2 /* Shopping */,
 				12908DA728B3FA2700C28381 /* Realm */,
 				12F4D5E92888F27C00C722B2 /* Search */,
 				123750532888E58800EE5208 /* Trend */,
@@ -135,9 +158,6 @@
 				127B4A4D2884F10A0087CCA4 /* Home.storyboard */,
 				127B4A5128850FD50087CCA4 /* Setting.storyboard */,
 				128F54CB2886F381003A0BAD /* MovieTableViewCell.swift */,
-				12F19D032886D89E001A19C0 /* Shopping.storyboard */,
-				12ED6FA7288717ED00DD20B4 /* ShoppingTableViewCell.swift */,
-				12F19D052886D8BD001A19C0 /* ShoppingTableViewController.swift */,
 				1232FB4D288640820002D6FB /* Intro.storyboard */,
 				1232FB53288645350002D6FB /* UIViewController+Extension.swift */,
 				1232FB552886478B0002D6FB /* UITextField+Extension.swift */,
@@ -250,6 +270,7 @@
 				127B4A5228850FD50087CCA4 /* Setting.storyboard in Resources */,
 				127B4A412884DDE70087CCA4 /* Main.storyboard in Resources */,
 				12F19D042886D89E001A19C0 /* Shopping.storyboard in Resources */,
+				122B0EAB28B50B7900569AE2 /* ShoppingRealmDataTableViewCell.xib in Resources */,
 				1232FB4A288640120002D6FB /* Search.storyboard in Resources */,
 				127B4A4E2884F10A0087CCA4 /* Home.storyboard in Resources */,
 			);
@@ -267,6 +288,7 @@
 				12F19D062886D8BD001A19C0 /* ShoppingTableViewController.swift in Sources */,
 				12908DA928B3FA2C00C28381 /* RealmModel.swift in Sources */,
 				128F54CC2886F381003A0BAD /* MovieTableViewCell.swift in Sources */,
+				121548B628B7C5BB00B1ABC4 /* ShoppingTableView.swift in Sources */,
 				1232FB54288645350002D6FB /* UIViewController+Extension.swift in Sources */,
 				12320E5028879AA300442D23 /* RecommandCollectionViewController.swift in Sources */,
 				127B4A502884FE3A0087CCA4 /* SettingTableViewController.swift in Sources */,
@@ -275,6 +297,7 @@
 				12E3381E288A3F9F002ED1ED /* AnyViewController.swift in Sources */,
 				123750552888E74700EE5208 /* TrendTableViewController.swift in Sources */,
 				127B4A3E2884DDE70087CCA4 /* ViewController.swift in Sources */,
+				122B0EAA28B50B7900569AE2 /* ShoppingRealmDataTableViewCell.swift in Sources */,
 				12320E5228879DFB00442D23 /* RecommandCollectionViewCell.swift in Sources */,
 				127B4A3A2884DDE70087CCA4 /* AppDelegate.swift in Sources */,
 				12EA3A5F288598130089E8E7 /* SettingCaseTableViewController.swift in Sources */,
@@ -282,6 +305,7 @@
 				12ED6FA8288717ED00DD20B4 /* ShoppingTableViewCell.swift in Sources */,
 				1232FB50288643F90002D6FB /* TrendViewController.swift in Sources */,
 				12F19D082886E562001A19C0 /* SearchTableViewController.swift in Sources */,
+				122B0EA728B50A7500569AE2 /* ShoppingRealmDataViewController.swift in Sources */,
 				1232FB5A28864D950002D6FB /* BucketlistTableViewCell.swift in Sources */,
 				127B4A3C2884DDE70087CCA4 /* SceneDelegate.swift in Sources */,
 			);

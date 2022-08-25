@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RealmSwift
+import SwiftUI
 
 class ShoppingTableViewController: UITableViewController {
     
@@ -13,6 +15,10 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var addButton: UIButton!
     
     var list: [String] = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"]
+    
+    let localRealm = try! Realm()
+    
+    var tmp = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +45,23 @@ class ShoppingTableViewController: UITableViewController {
         userTextField.text = nil
     }
     
-    @objc func bookmarkButtonClicked() {
-        
+    @objc func changeCheckBoxButtonClicked(button: UIButton) {
+        if button.image(for: .normal) == UIImage(systemName: "checkmark.square.fill") {
+            button.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        } else {
+            button.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+        }
     }
+    
+    @objc func changeBookMarkButtonClicked(button: UIButton) {
+        if button.image(for: .normal) == UIImage(systemName: "star.fill") {
+            button.setImage(UIImage(systemName: "star"), for: .normal)
+        } else {
+            button.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+    }
+
+    
     
     func designButton(button: UIButton, text: String) {
         button.setTitle(text, for: .normal)
@@ -49,7 +69,7 @@ class ShoppingTableViewController: UITableViewController {
         button.backgroundColor = UIColor.systemGray5
         button.layer.cornerRadius = 8
     }
-    
+        
     //Enter시, 셀 추가
     @IBAction func userTextFieldEnter(_ sender: UITextField) {
         list.append(sender.text!)
@@ -63,10 +83,27 @@ class ShoppingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell") as! ShoppingTableViewCell
         
-        cell.checkboxImageView.image = UIImage(systemName: "checkmark.square.fill")
+        if tmp == 0 {
+            cell.checkBoxButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            cell.bookmarkButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        
+        cell.checkBoxButton.addTarget(self, action: #selector(changeCheckBoxButtonClicked(button:)), for: .touchUpInside)
+        cell.checkBoxButton.tintColor = .black
         cell.contentsLabel.text = list[indexPath.row]
-        cell.bookmarkButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        cell.bookmarkButton.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
+        cell.bookmarkButton.addTarget(self, action: #selector(changeBookMarkButtonClicked(button:)), for: .touchUpInside)
+        
+        let checkBoxStatus = (cell.checkBoxButton.image(for: .normal) == UIImage(systemName: "checkmark.square.fill")) ? true : false
+        
+        let bookMarkStatus = (cell.bookmarkButton.image(for: .normal) == UIImage(systemName: "star.fill")) ? true : false
+        
+        let task = ShoppingList(Todo: list[indexPath.row], bookMark: bookMarkStatus, compStatus: checkBoxStatus)
+        
+        try! localRealm.write {
+            localRealm.add(task)
+        }
+        
+        tmp += 1
         
         return cell
     }

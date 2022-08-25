@@ -27,6 +27,9 @@ class TrendTableViewController: UITableViewController {
         //2.
         let vc = sb.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as! BucketlistTableViewController
         
+        //2. 값 전달
+        vc.textfieldPlaceholder = "영화를 입력해주세요"
+        
         //3.
         self.present(vc, animated: true)
         
@@ -35,16 +38,19 @@ class TrendTableViewController: UITableViewController {
     @IBAction func dramaButtonClicked(_ sender: Any) {
         
         //1.
-        let sb = UIStoryboard(name: "Trend", bundle: nil)
+        let sb = UIStoryboard(name: "Search", bundle: nil)
         
         //2.
         let vc = sb.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as! BucketlistTableViewController
         
         //2.5.
-        vc.modalPresentationStyle = .fullScreen
+        //vc.modalPresentationStyle = .fullScreen
+        
+        //2. 값 전달
+        vc.textfieldPlaceholder = "드라마를 입력해주세요"
         
         //3.
-        self.present(vc, animated: true)
+        self.present(vc, animated: true) //뷰 컨트롤러를 present 했으나, NavigationController를 스토리보드로 구현한 경우
 
     }
     
@@ -55,6 +61,9 @@ class TrendTableViewController: UITableViewController {
         
         //2.
         let vc = sb.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as! BucketlistTableViewController
+        
+        //2. 값 전달
+        vc.textfieldPlaceholder = "도서를 입력해주세요"
         
         //2.5.
         let nav = UINavigationController(rootViewController: vc)
