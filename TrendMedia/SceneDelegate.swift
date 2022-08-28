@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
                         
             let sb = UIStoryboard(name: "Shopping", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "ShoppingRealmDataViewController") as! ShoppingRealmDataViewController
+            let vc = sb.instantiateViewController(withIdentifier: "ShoppingTableViewController") as! ShoppingTableViewController
             
             
             window?.rootViewController = UINavigationController(rootViewController: vc)

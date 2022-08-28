@@ -18,7 +18,6 @@ class ShoppingTableViewController: UITableViewController {
     
     let localRealm = try! Realm()
     
-    var tmp = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,12 +61,20 @@ class ShoppingTableViewController: UITableViewController {
     }
 
     
-    
     func designButton(button: UIButton, text: String) {
         button.setTitle(text, for: .normal)
         button.tintColor = UIColor.black
         button.backgroundColor = UIColor.systemGray5
         button.layer.cornerRadius = 8
+    }
+    
+    func initTableView(cell: ShoppingTableViewCell, content: String) {
+        cell.checkBoxButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+        cell.bookmarkButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        cell.checkBoxButton.addTarget(self, action: #selector(changeCheckBoxButtonClicked(button:)), for: .touchUpInside)
+        cell.checkBoxButton.tintColor = .black
+        cell.contentsLabel.text = content
+        cell.bookmarkButton.addTarget(self, action: #selector(changeBookMarkButtonClicked(button:)), for: .touchUpInside)
     }
         
     //Enter시, 셀 추가
@@ -83,15 +90,7 @@ class ShoppingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell") as! ShoppingTableViewCell
         
-        if tmp == 0 {
-            cell.checkBoxButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-            cell.bookmarkButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        }
-        
-        cell.checkBoxButton.addTarget(self, action: #selector(changeCheckBoxButtonClicked(button:)), for: .touchUpInside)
-        cell.checkBoxButton.tintColor = .black
-        cell.contentsLabel.text = list[indexPath.row]
-        cell.bookmarkButton.addTarget(self, action: #selector(changeBookMarkButtonClicked(button:)), for: .touchUpInside)
+        initTableView(cell: cell, content: list[indexPath.row])
         
         let checkBoxStatus = (cell.checkBoxButton.image(for: .normal) == UIImage(systemName: "checkmark.square.fill")) ? true : false
         
@@ -102,8 +101,6 @@ class ShoppingTableViewController: UITableViewController {
         try! localRealm.write {
             localRealm.add(task)
         }
-        
-        tmp += 1
         
         return cell
     }
@@ -119,5 +116,11 @@ class ShoppingTableViewController: UITableViewController {
             list.remove(at: indexPath.row)
             tableView.reloadData()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailPageViewController()
+        
+        present(vc, animated: true)
     }
 }

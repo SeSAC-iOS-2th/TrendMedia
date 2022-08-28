@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120B793728BBA670006B6B94 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B793628BBA670006B6B94 /* DetailPageViewController.swift */; };
 		121548B628B7C5BB00B1ABC4 /* ShoppingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121548B528B7C5BB00B1ABC4 /* ShoppingTableView.swift */; };
 		122B0EA728B50A7500569AE2 /* ShoppingRealmDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B0EA628B50A7500569AE2 /* ShoppingRealmDataViewController.swift */; };
 		122B0EAA28B50B7900569AE2 /* ShoppingRealmDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B0EA828B50B7900569AE2 /* ShoppingRealmDataTableViewCell.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		120B793628BBA670006B6B94 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		121548B528B7C5BB00B1ABC4 /* ShoppingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableView.swift; sourceTree = "<group>"; };
 		122B0EA628B50A7500569AE2 /* ShoppingRealmDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingRealmDataViewController.swift; sourceTree = "<group>"; };
 		122B0EA828B50B7900569AE2 /* ShoppingRealmDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingRealmDataTableViewCell.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				122B0EA628B50A7500569AE2 /* ShoppingRealmDataViewController.swift */,
 				122B0EA828B50B7900569AE2 /* ShoppingRealmDataTableViewCell.swift */,
 				122B0EA928B50B7900569AE2 /* ShoppingRealmDataTableViewCell.xib */,
+				120B793628BBA670006B6B94 /* DetailPageViewController.swift */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				120B793728BBA670006B6B94 /* DetailPageViewController.swift in Sources */,
 				12320E4E2887956A00442D23 /* MovieInfo.swift in Sources */,
 				1232FB562886478B0002D6FB /* UITextField+Extension.swift in Sources */,
 				12F19D062886D8BD001A19C0 /* ShoppingTableViewController.swift in Sources */,
